@@ -1,8 +1,7 @@
 package com.niko.news.ui.main.news
 
 import com.arellomobile.mvp.InjectViewState
-import com.niko.news.domain.models.dataModels.GetNewsDataModel
-import com.niko.news.domain.useCases.GetNewsUseCase
+import com.niko.news.domain.useCases.SelectArticlesByCategoryUseCase
 import com.niko.news.other.async
 import com.niko.news.other.base.BasePresenter
 import javax.inject.Inject
@@ -11,15 +10,17 @@ import javax.inject.Inject
 class NewsPresenter
 @Inject
 constructor(
-        private val getNewsUseCase: GetNewsUseCase
+        private val selectArticlesByCategoryUseCase: SelectArticlesByCategoryUseCase
 ) : BasePresenter<NewsView>() {
-    init {
-        getNewsUseCase.createObservable(
-                GetNewsDataModel(category = "business", page = 1)
-        ).async().subscribe({
-            println(it)
-        }, {
-            println(it)
-        }).tracked()
+
+    fun getNewsByParam(category: String) {
+        selectArticlesByCategoryUseCase.createObservable(category)
+                .async()
+                .subscribe({
+                    println(it)
+                }, {
+                    println(it)
+                }).tracked()
     }
+
 }

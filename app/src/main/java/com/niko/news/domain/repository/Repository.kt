@@ -1,10 +1,12 @@
 package com.niko.news.domain.repository
 
-import com.niko.news.domain.models.dataModels.GetNewsDataModel
+import com.niko.news.domain.models.dataModels.GetArticleDataModel
+import com.niko.news.domain.models.entities.ArticleModel
 import io.reactivex.Observable
-import okhttp3.ResponseBody
-import retrofit2.Response
 
 interface Repository {
-    fun getNews(getNewsDataModel: GetNewsDataModel): Observable<Response<ResponseBody>>
+    fun removeAllArticles(): Observable<Boolean>
+    fun saveArticles(articles: List<ArticleModel>): Observable<Boolean>
+    fun selectArticlesByCategory(category: String): Observable<List<ArticleModel>>
+    fun getArticles(getArticleDataModel: GetArticleDataModel): Observable<List<ArticleModel>>
 }
