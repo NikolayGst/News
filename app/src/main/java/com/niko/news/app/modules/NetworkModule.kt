@@ -23,6 +23,13 @@ class NetworkModule {
 
     @Singleton
     @Provides
+    @Named("API_KEY")
+    fun provideApiKey(context: Context): String {
+        return context.getString(R.string.news_api_key)
+    }
+
+    @Singleton
+    @Provides
     fun provideGsonConverterFactory(): GsonConverterFactory {
         return GsonConverterFactory.create()
     }

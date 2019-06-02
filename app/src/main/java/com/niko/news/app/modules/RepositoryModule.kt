@@ -6,6 +6,7 @@ import com.niko.news.domain.repository.Repository
 import com.niko.news.domain.repository.RepositoryImpl
 import dagger.Module
 import dagger.Provides
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
@@ -14,9 +15,11 @@ class RepositoryModule {
     @Singleton
     @Provides
     fun provideRepository(
+            @Named("API_KEY")
+            apiKey: String,
             globalDataProvider: GlobalDataProvider,
             localDataProvider: LocalDataProvider
     ): Repository {
-        return RepositoryImpl(globalDataProvider, localDataProvider)
+        return RepositoryImpl(apiKey, globalDataProvider, localDataProvider)
     }
 }

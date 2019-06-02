@@ -3,22 +3,22 @@ package com.niko.news.ui.main.news
 
 import android.os.Bundle
 import android.view.View
-import androidx.fragment.app.Fragment
+import com.arellomobile.mvp.presenter.InjectPresenter
+import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.niko.news.R
 import com.niko.news.other.annotations.LayoutResourceId
 import com.niko.news.other.base.BaseFragment
+import javax.inject.Inject
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- *
- */
 @LayoutResourceId(R.layout.fragment_news)
-class NewsFragment : BaseFragment() {
+class NewsFragment : BaseFragment(), NewsView {
+
+    @Inject
+    @InjectPresenter
+    lateinit var newsPresenter: NewsPresenter
+
+    @ProvidePresenter
+    fun provideNewsPresenter() = newsPresenter
 
     override fun renderView(view: View, savedInstanceState: Bundle?) {
 
