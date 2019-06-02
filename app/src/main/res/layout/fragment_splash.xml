@@ -2,20 +2,20 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
-  android:background="#FFFFFF"
+  android:background="@android:color/white"
   android:layout_height="match_parent"
   tools:context=".ui.main.splash.SplashFragment">
 
   <androidx.appcompat.widget.AppCompatImageView
     android:id="@+id/logo"
     android:layout_width="wrap_content"
-    android:layout_marginTop="70dp"
+    android:layout_marginTop="@dimen/splash_logo_margin"
     android:src="@drawable/splash_logo"
-    android:layout_height="300dp" />
+    android:layout_height="@dimen/splash_logo_height" />
 
   <androidx.appcompat.widget.AppCompatTextView
     android:id="@+id/title"
-    android:layout_marginTop="16dp"
+    android:layout_marginTop="@dimen/spacing_large"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_below="@id/logo"
@@ -23,11 +23,11 @@
     android:gravity="center"
     android:text="NEWS"
     android:textColor="@android:color/black"
-    android:textSize="40sp" />
+    android:textSize="@dimen/splash_title_text_size" />
 
   <androidx.core.widget.ContentLoadingProgressBar
     android:layout_width="match_parent"
-    android:layout_margin="30dp"
+    android:layout_margin="@dimen/spacing_mxlarge"
     android:indeterminate="true"
     android:theme="@style/ProgressStyle"
     android:layout_below="@id/title"

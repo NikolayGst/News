@@ -6,6 +6,8 @@ import com.niko.news.R
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 fun <T : Any> Observable<T>.async(): Observable<T> {
@@ -20,6 +22,15 @@ fun Fragment.showThrowableMessage(throwable: Throwable) {
     dialog.show()
 }
 
+fun String.parseTimestamp(): Date {
+    val dateFormat = SimpleDateFormat(TIMESTAMP, Locale.getDefault())
+    return dateFormat.parse(this)
+}
+
+fun Date.formatArticleTime(): String {
+    val dateFormat = SimpleDateFormat(ARTICLE_FORMAT, Locale.getDefault())
+    return dateFormat.format(this)
+}
 
 fun Fragment.ending(number: Int, arrayRes: Int): String {
 

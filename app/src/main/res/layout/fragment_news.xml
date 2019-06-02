@@ -10,7 +10,7 @@
   <androidx.appcompat.widget.Toolbar
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
-    android:layout_height="?attr/actionBarSize"
+    android:layout_height="@dimen/toolbar_height"
     android:background="?attr/colorPrimary"
     android:elevation="6dp">
 
@@ -29,10 +29,11 @@
     android:id="@+id/nested_scroll_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     android:scrollbars="none">
     <LinearLayout
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
+      android:layout_height="match_parent"
       android:focusableInTouchMode="true"
       android:orientation="vertical">
       <HorizontalScrollView
@@ -49,7 +50,7 @@
             android:layout_width="@dimen/spacing_smlarge"
             android:layout_height="0dp" />
           <androidx.cardview.widget.CardView
-            android:layout_width="150dp"
+            android:layout_width="@dimen/article_card_width"
             android:layout_height="wrap_content"
             app:cardBackgroundColor="@color/light_blue_400"
             app:cardCornerRadius="4dp"
@@ -65,8 +66,8 @@
               android:focusable="true"
               android:orientation="vertical">
               <RelativeLayout
-                android:layout_width="35dp"
-                android:layout_height="35dp">
+                android:layout_width="@dimen/article_icon_size"
+                android:layout_height="@dimen/article_icon_size">
                 <androidx.appcompat.widget.AppCompatImageView
                   android:layout_width="match_parent"
                   android:layout_height="match_parent"
@@ -85,7 +86,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_middle"
-                android:text="Бизнес"
+                android:text="@string/business_text"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
                 android:textColor="@android:color/white"
                 app:fontFamily="sans-serif-medium" />
@@ -102,7 +103,7 @@
             android:layout_width="@dimen/spacing_middle"
             android:layout_height="0dp" />
           <androidx.cardview.widget.CardView
-            android:layout_width="150dp"
+            android:layout_width="@dimen/article_card_width"
             android:layout_height="wrap_content"
             app:cardBackgroundColor="@color/green_400"
             app:cardCornerRadius="4dp"
@@ -118,8 +119,8 @@
               android:focusable="true"
               android:orientation="vertical">
               <RelativeLayout
-                android:layout_width="35dp"
-                android:layout_height="35dp">
+                android:layout_width="@dimen/article_icon_size"
+                android:layout_height="@dimen/article_icon_size">
                 <androidx.appcompat.widget.AppCompatImageView
                   android:layout_width="match_parent"
                   android:layout_height="match_parent"
@@ -138,7 +139,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_middle"
-                android:text="Спорт"
+                android:text="@string/sport_text"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
                 android:textColor="@android:color/white"
                 app:fontFamily="sans-serif-medium" />
@@ -155,7 +156,7 @@
             android:layout_width="@dimen/spacing_middle"
             android:layout_height="0dp" />
           <androidx.cardview.widget.CardView
-            android:layout_width="150dp"
+            android:layout_width="@dimen/article_card_width"
             android:layout_height="wrap_content"
             app:cardBackgroundColor="@color/yellow_400"
             app:cardCornerRadius="4dp"
@@ -171,8 +172,8 @@
               android:focusable="true"
               android:orientation="vertical">
               <RelativeLayout
-                android:layout_width="35dp"
-                android:layout_height="35dp">
+                android:layout_width="@dimen/article_icon_size"
+                android:layout_height="@dimen/article_icon_size">
                 <androidx.appcompat.widget.AppCompatImageView
                   android:layout_width="match_parent"
                   android:layout_height="match_parent"
@@ -191,7 +192,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_middle"
-                android:text="Наука"
+                android:text="@string/science_text"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
                 android:textColor="@android:color/white"
                 app:fontFamily="sans-serif-medium" />
@@ -208,7 +209,7 @@
             android:layout_width="@dimen/spacing_middle"
             android:layout_height="0dp" />
           <androidx.cardview.widget.CardView
-            android:layout_width="150dp"
+            android:layout_width="@dimen/article_card_width"
             android:layout_height="wrap_content"
             app:cardBackgroundColor="@color/red_400"
             app:cardCornerRadius="4dp"
@@ -224,8 +225,8 @@
               android:focusable="true"
               android:orientation="vertical">
               <RelativeLayout
-                android:layout_width="35dp"
-                android:layout_height="35dp">
+                android:layout_width="@dimen/article_icon_size"
+                android:layout_height="@dimen/article_icon_size">
                 <androidx.appcompat.widget.AppCompatImageView
                   android:layout_width="match_parent"
                   android:layout_height="match_parent"
@@ -244,7 +245,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_middle"
-                android:text="Технологии"
+                android:text="@string/tech_text"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
                 android:textColor="@android:color/white"
                 app:fontFamily="sans-serif-medium" />
@@ -263,16 +264,37 @@
         </LinearLayout>
       </HorizontalScrollView>
 
-      <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+      <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/spacing_middle"
-        android:layout_marginBottom="@dimen/spacing_medium"
-        android:layout_marginLeft="@dimen/spacing_medium"
-        android:layout_marginRight="@dimen/spacing_medium"
-        android:fillViewport="true"
-        android:scrollbars="vertical" />
+        android:layout_height="match_parent">
+
+        <FrameLayout
+          android:id="@+id/progress"
+          android:visibility="visible"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+          <androidx.core.widget.ContentLoadingProgressBar
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="@dimen/progress_bar_size"
+            android:layout_height="@dimen/progress_bar_size"
+            android:layout_gravity="center"
+            android:indeterminate="true" />
+        </FrameLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/recyclerView"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_marginTop="@dimen/spacing_middle"
+          android:layout_marginBottom="@dimen/spacing_medium"
+          android:layout_marginLeft="@dimen/spacing_medium"
+          android:layout_marginRight="@dimen/spacing_medium"
+          android:fillViewport="true"
+          android:scrollbars="vertical"
+          android:visibility="visible" />
+      </RelativeLayout>
+
+
     </LinearLayout>
   </androidx.core.widget.NestedScrollView>
 

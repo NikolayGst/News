@@ -4,11 +4,14 @@ package com.niko.news.ui.main.news
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
+import com.mikepenz.fastadapter.FastAdapter
+import com.mikepenz.fastadapter.adapters.ItemAdapter
 import com.niko.news.R
 import com.niko.news.domain.models.entities.ArticleModel
+import com.niko.news.domain.models.fastAdapter.ArticleItem
 import com.niko.news.other.*
 import com.niko.news.other.annotations.LayoutResourceId
 import com.niko.news.other.base.BaseFragment
@@ -25,7 +28,24 @@ class NewsFragment : BaseFragment(), NewsView {
     @ProvidePresenter
     fun provideNewsPresenter() = newsPresenter
 
+    private lateinit var fastAdapter: FastAdapter<ArticleItem>
+    private lateinit var itemAdapter: ItemAdapter<ArticleItem>
+
     override fun renderView(view: View, savedInstanceState: Bundle?) {
+        setupCategoryButtons()
+        setupRecyclerView()
+    }
+
+    private fun setupRecyclerView() {
+        itemAdapter = ItemAdapter()
+        fastAdapter = FastAdapter.with(itemAdapter)
+        with(recyclerView) {
+            layoutManager = LinearLayoutManager(requireContext())
+            adapter = fastAdapter
+        }
+    }
+
+    private fun setupCategoryButtons() {
         lrBusiness.setOnClickListener { newsPresenter.getNewsByParam(BUSINESS) }
         lrSport.setOnClickListener { newsPresenter.getNewsByParam(SPORTS) }
         lrScience.setOnClickListener { newsPresenter.getNewsByParam(SCIENCE) }
@@ -41,7 +61,18 @@ class NewsFragment : BaseFragment(), NewsView {
     }
 
     override fun onSuccessGetArticlesByCategory(articles: List<ArticleModel>) {
-        Toast.makeText(requireContext(), "onSuccess: ${articles.first().category}", Toast.LENGTH_SHORT).show()
+        itemAdapter.clear()
+        itemAdapter.add(articles.map { ArticleItem(it) })
+    }
+
+    override fun showProgress() {
+        progress.visibility = View.VISIBLE
+        recyclerView.visibility = View.GONE
+    }
+
+    override fun hideProgress() {
+        progress.visibility = View.GONE
+        recyclerView.visibility = View.VISIBLE
     }
 
     override fun onFailure(throwable: Throwable) {

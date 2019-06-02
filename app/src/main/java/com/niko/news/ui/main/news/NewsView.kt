@@ -9,5 +9,7 @@ import com.niko.news.domain.models.entities.ArticleModel
 interface NewsView : MvpView {
     fun onSuccessGetCounts(map: Map<String, Int>)
     fun onSuccessGetArticlesByCategory(articles: List<ArticleModel>)
+    fun showProgress()
+    fun hideProgress()
     fun onFailure(throwable: Throwable)
 }
