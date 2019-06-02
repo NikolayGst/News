@@ -1,17 +1,11 @@
 package com.niko.news.domain.useCases
 
 import com.niko.news.domain.models.dataModels.GetArticleDataModel
-import com.niko.news.domain.models.entities.ArticleModel
 import com.niko.news.domain.repository.Repository
-import com.niko.news.other.BUSINESS
-import com.niko.news.other.SCIENCE
-import com.niko.news.other.SPORTS
-import com.niko.news.other.TECHNOLOGY
+import com.niko.news.other.*
 import io.reactivex.Observable
 import io.reactivex.functions.Function4
 import javax.inject.Inject
-
-typealias Articles = List<ArticleModel>
 
 class GetAllArticlesUseCase
 @Inject

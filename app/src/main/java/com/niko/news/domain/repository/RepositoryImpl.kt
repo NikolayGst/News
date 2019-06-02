@@ -24,15 +24,19 @@ class RepositoryImpl(
         return localDataProvider.selectArticlesByCategory(category)
     }
 
-    override   fun getArticles(getArticleDataModel: GetArticleDataModel): Observable<List<ArticleModel>> {
+    override fun getArticles(getArticleDataModel: GetArticleDataModel): Observable<List<ArticleModel>> {
         return globalDataProvider.getArticles(
                 getArticleDataModel.country,
                 getArticleDataModel.category,
                 getArticleDataModel.page,
                 getArticleDataModel.pageSize,
                 apiKey
-        ).map {
-            it.articles
+        ).map { list ->
+            list.articles.filter {
+                !it.description.isNullOrEmpty() && !it.urlToImage.isNullOrEmpty()
+            }
+        }.map { list ->
+            list.map { it.copy(category = getArticleDataModel.category) }
         }
     }
 }

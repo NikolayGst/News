@@ -12,6 +12,8 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import javax.inject.Inject
 
+
+
 abstract class BaseActivity : MvpAppCompatActivity(), HasSupportFragmentInjector {
 
     private val compositeDisposable = CompositeDisposable()

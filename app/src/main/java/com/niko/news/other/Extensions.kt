@@ -19,3 +19,26 @@ fun Fragment.showThrowableMessage(throwable: Throwable) {
             .create()
     dialog.show()
 }
+
+
+fun Fragment.ending(number: Int, arrayRes: Int): String {
+
+    val arrayEndings = resources.getStringArray(arrayRes)
+
+    var selectedNumber = number
+
+    val finalEnding: String
+    val i: Int
+    selectedNumber %= 100
+    if (selectedNumber in 11..19) {
+        finalEnding = arrayEndings[2]
+    } else {
+        i = selectedNumber % 10
+        finalEnding = when (i) {
+            1 -> arrayEndings[0]
+            2, 3, 4 -> arrayEndings[1]
+            else -> arrayEndings[2]
+        }
+    }
+    return finalEnding
+}

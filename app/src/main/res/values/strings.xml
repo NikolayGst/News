@@ -6,5 +6,10 @@
   <string name="base_url">https://newsapi.org/v2/</string>
   <string name="news_api_key">470f57d4c5b84a4187425b2ab761c7b1</string>
   <string name="ok">Ок</string>
+  <string-array name="articles">
+    <item>статья</item>
+    <item>статьи</item>
+    <item>статей</item>
+  </string-array>
 
 </resources>

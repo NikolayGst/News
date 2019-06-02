@@ -15,7 +15,7 @@ abstract class BaseFragment : MvpAppCompatFragment() {
 
     private val compositeDisposable = CompositeDisposable()
 
-    override fun onAttach(context: Context?) {
+    override fun onAttach(context: Context) {
         AndroidSupportInjection.inject(this)
         super.onAttach(context)
     }

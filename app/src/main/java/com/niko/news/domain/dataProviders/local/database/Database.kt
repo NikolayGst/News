@@ -9,7 +9,7 @@ import com.niko.news.domain.models.entities.ArticleModel
         entities = [
             ArticleModel::class
         ],
-        version = 2,
+        version = 1,
         exportSchema = false)
 abstract class Database : RoomDatabase() {
 

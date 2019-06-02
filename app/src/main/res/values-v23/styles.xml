@@ -1,6 +1,5 @@
 <resources>
 
-    <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -8,10 +7,7 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-    </style>
-
-    <style name="ProgressStyle" parent="Widget.AppCompat.ProgressBar.Horizontal">
-        <item name="colorAccent">@android:color/black</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 
 </resources>
