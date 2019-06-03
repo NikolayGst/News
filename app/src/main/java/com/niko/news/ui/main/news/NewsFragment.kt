@@ -18,6 +18,8 @@ import com.niko.news.other.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_news.*
 import javax.inject.Inject
 
+const val ADD_ITEMS_DURATION = 1500L
+
 @LayoutResourceId(R.layout.fragment_news)
 class NewsFragment : BaseFragment(), NewsView {
 
@@ -46,10 +48,19 @@ class NewsFragment : BaseFragment(), NewsView {
     }
 
     private fun setupCategoryButtons() {
-        lrBusiness.setOnClickListener { newsPresenter.getNewsByParam(BUSINESS) }
-        lrSport.setOnClickListener { newsPresenter.getNewsByParam(SPORTS) }
-        lrScience.setOnClickListener { newsPresenter.getNewsByParam(SCIENCE) }
-        lrTech.setOnClickListener { newsPresenter.getNewsByParam(TECHNOLOGY) }
+        val onClickListener = View.OnClickListener {
+            when(it.id) {
+                R.id.lrBusiness -> newsPresenter.getNewsByParam(BUSINESS)
+                R.id.lrSport -> newsPresenter.getNewsByParam(SPORTS)
+                R.id.lrScience -> newsPresenter.getNewsByParam(SCIENCE)
+                R.id.lrTech -> newsPresenter.getNewsByParam(TECHNOLOGY)
+            }
+        }
+
+        lrBusiness.setOnClickListener(onClickListener)
+        lrSport.setOnClickListener(onClickListener)
+        lrScience.setOnClickListener(onClickListener)
+        lrTech.setOnClickListener(onClickListener)
     }
 
     @SuppressLint("SetTextI18n")
@@ -67,12 +78,12 @@ class NewsFragment : BaseFragment(), NewsView {
 
     override fun showProgress() {
         progress.visibility = View.VISIBLE
-        recyclerView.visibility = View.GONE
     }
 
     override fun hideProgress() {
-        progress.visibility = View.GONE
-        recyclerView.visibility = View.VISIBLE
+        recyclerView.postDelayed({
+            progress.visibility = View.GONE
+        }, ADD_ITEMS_DURATION)
     }
 
     override fun onFailure(throwable: Throwable) {

@@ -25,277 +25,285 @@
 
   </androidx.appcompat.widget.Toolbar>
 
-  <androidx.core.widget.NestedScrollView
-    android:id="@+id/nested_scroll_view"
+  <RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true"
-    android:scrollbars="none">
-    <LinearLayout
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+      android:id="@+id/nested_scroll_view"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:focusableInTouchMode="true"
-      android:orientation="vertical">
-      <HorizontalScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/spacing_mxlarge"
-        android:scrollbars="none">
-        <LinearLayout
+      android:fillViewport="true"
+      android:scrollbars="none">
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+        <HorizontalScrollView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:gravity="center_vertical"
-          android:orientation="horizontal">
-          <View
-            android:layout_width="@dimen/spacing_smlarge"
-            android:layout_height="0dp" />
-          <androidx.cardview.widget.CardView
-            android:layout_width="@dimen/article_card_width"
+          android:layout_marginTop="@dimen/spacing_mxlarge"
+          android:scrollbars="none">
+          <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="@color/light_blue_400"
-            app:cardCornerRadius="4dp"
-            app:cardElevation="0dp"
-            app:cardUseCompatPadding="false">
-            <LinearLayout
-              android:id="@+id/lrBusiness"
-              android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <View
+              android:layout_width="@dimen/spacing_smlarge"
+              android:layout_height="0dp" />
+            <androidx.cardview.widget.CardView
+              android:layout_width="@dimen/article_card_width"
               android:layout_height="wrap_content"
-              android:padding="@dimen/spacing_large"
-              android:background="?selectableItemBackgroundBorderless"
-              android:clickable="true"
-              android:focusable="true"
-              android:orientation="vertical">
-              <RelativeLayout
-                android:layout_width="@dimen/article_icon_size"
-                android:layout_height="@dimen/article_icon_size">
-                <androidx.appcompat.widget.AppCompatImageView
-                  android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:layout_centerInParent="true"
-                  android:tint="@android:color/white"
-                  app:srcCompat="@drawable/shape_circle" />
-                <androidx.appcompat.widget.AppCompatImageView
-                  android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:layout_margin="5dp"
-                  android:layout_centerInParent="true"
-                  android:tint="@color/light_blue_400"
-                  app:srcCompat="@drawable/ic_business" />
-              </RelativeLayout>
-              <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
+              app:cardBackgroundColor="@color/light_blue_400"
+              app:cardCornerRadius="4dp"
+              app:cardElevation="0dp"
+              app:cardUseCompatPadding="false">
+              <LinearLayout
+                android:id="@+id/lrBusiness"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_middle"
-                android:text="@string/business_text"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
-                android:textColor="@android:color/white"
-                app:fontFamily="sans-serif-medium" />
-              <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/countBusinessArticles"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_medium"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
-                android:textColor="@color/grey" />
-            </LinearLayout>
-          </androidx.cardview.widget.CardView>
-          <View
-            android:layout_width="@dimen/spacing_middle"
-            android:layout_height="0dp" />
-          <androidx.cardview.widget.CardView
-            android:layout_width="@dimen/article_card_width"
-            android:layout_height="wrap_content"
-            app:cardBackgroundColor="@color/green_400"
-            app:cardCornerRadius="4dp"
-            app:cardElevation="0dp"
-            app:cardUseCompatPadding="false">
-            <LinearLayout
-              android:id="@+id/lrSport"
-              android:layout_width="match_parent"
+                android:padding="@dimen/spacing_large"
+                android:background="?selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical">
+                <RelativeLayout
+                  android:layout_width="@dimen/article_icon_size"
+                  android:layout_height="@dimen/article_icon_size">
+                  <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:tint="@android:color/white"
+                    app:srcCompat="@drawable/shape_circle" />
+                  <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_centerInParent="true"
+                    android:tint="@color/light_blue_400"
+                    app:srcCompat="@drawable/ic_business" />
+                </RelativeLayout>
+                <androidx.appcompat.widget.AppCompatTextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/spacing_middle"
+                  android:text="@string/business_text"
+                  android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                  android:textColor="@android:color/white"
+                  app:fontFamily="sans-serif-medium" />
+                <androidx.appcompat.widget.AppCompatTextView
+                  android:id="@+id/countBusinessArticles"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/spacing_medium"
+                  android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+                  android:textColor="@color/grey" />
+              </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <View
+              android:layout_width="@dimen/spacing_middle"
+              android:layout_height="0dp" />
+            <androidx.cardview.widget.CardView
+              android:layout_width="@dimen/article_card_width"
               android:layout_height="wrap_content"
-              android:padding="@dimen/spacing_large"
-              android:background="?selectableItemBackgroundBorderless"
-              android:clickable="true"
-              android:focusable="true"
-              android:orientation="vertical">
-              <RelativeLayout
-                android:layout_width="@dimen/article_icon_size"
-                android:layout_height="@dimen/article_icon_size">
-                <androidx.appcompat.widget.AppCompatImageView
-                  android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:layout_centerInParent="true"
-                  android:tint="@android:color/white"
-                  app:srcCompat="@drawable/shape_circle" />
-                <androidx.appcompat.widget.AppCompatImageView
-                  android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:layout_margin="5dp"
-                  android:layout_centerInParent="true"
-                  android:tint="@color/green_400"
-                  app:srcCompat="@drawable/ic_fitness" />
-              </RelativeLayout>
-              <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
+              app:cardBackgroundColor="@color/green_400"
+              app:cardCornerRadius="4dp"
+              app:cardElevation="0dp"
+              app:cardUseCompatPadding="false">
+              <LinearLayout
+                android:id="@+id/lrSport"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_middle"
-                android:text="@string/sport_text"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
-                android:textColor="@android:color/white"
-                app:fontFamily="sans-serif-medium" />
-              <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/countSportArticles"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_medium"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
-                android:textColor="@color/grey" />
-            </LinearLayout>
-          </androidx.cardview.widget.CardView>
-          <View
-            android:layout_width="@dimen/spacing_middle"
-            android:layout_height="0dp" />
-          <androidx.cardview.widget.CardView
-            android:layout_width="@dimen/article_card_width"
-            android:layout_height="wrap_content"
-            app:cardBackgroundColor="@color/yellow_400"
-            app:cardCornerRadius="4dp"
-            app:cardElevation="0dp"
-            app:cardUseCompatPadding="false">
-            <LinearLayout
-              android:id="@+id/lrScience"
-              android:layout_width="match_parent"
+                android:padding="@dimen/spacing_large"
+                android:background="?selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical">
+                <RelativeLayout
+                  android:layout_width="@dimen/article_icon_size"
+                  android:layout_height="@dimen/article_icon_size">
+                  <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:tint="@android:color/white"
+                    app:srcCompat="@drawable/shape_circle" />
+                  <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_centerInParent="true"
+                    android:tint="@color/green_400"
+                    app:srcCompat="@drawable/ic_fitness" />
+                </RelativeLayout>
+                <androidx.appcompat.widget.AppCompatTextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/spacing_middle"
+                  android:text="@string/sport_text"
+                  android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                  android:textColor="@android:color/white"
+                  app:fontFamily="sans-serif-medium" />
+                <androidx.appcompat.widget.AppCompatTextView
+                  android:id="@+id/countSportArticles"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/spacing_medium"
+                  android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+                  android:textColor="@color/grey" />
+              </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <View
+              android:layout_width="@dimen/spacing_middle"
+              android:layout_height="0dp" />
+            <androidx.cardview.widget.CardView
+              android:layout_width="@dimen/article_card_width"
               android:layout_height="wrap_content"
-              android:padding="@dimen/spacing_large"
-              android:background="?selectableItemBackgroundBorderless"
-              android:clickable="true"
-              android:focusable="true"
-              android:orientation="vertical">
-              <RelativeLayout
-                android:layout_width="@dimen/article_icon_size"
-                android:layout_height="@dimen/article_icon_size">
-                <androidx.appcompat.widget.AppCompatImageView
-                  android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:layout_centerInParent="true"
-                  android:tint="@android:color/white"
-                  app:srcCompat="@drawable/shape_circle" />
-                <androidx.appcompat.widget.AppCompatImageView
-                  android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:layout_margin="5dp"
-                  android:layout_centerInParent="true"
-                  android:tint="@color/yellow_400"
-                  app:srcCompat="@drawable/ic_layers" />
-              </RelativeLayout>
-              <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
+              app:cardBackgroundColor="@color/yellow_400"
+              app:cardCornerRadius="4dp"
+              app:cardElevation="0dp"
+              app:cardUseCompatPadding="false">
+              <LinearLayout
+                android:id="@+id/lrScience"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_middle"
-                android:text="@string/science_text"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
-                android:textColor="@android:color/white"
-                app:fontFamily="sans-serif-medium" />
-              <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/countScienceArticles"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_medium"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
-                android:textColor="@color/grey" />
-            </LinearLayout>
-          </androidx.cardview.widget.CardView>
-          <View
-            android:layout_width="@dimen/spacing_middle"
-            android:layout_height="0dp" />
-          <androidx.cardview.widget.CardView
-            android:layout_width="@dimen/article_card_width"
-            android:layout_height="wrap_content"
-            app:cardBackgroundColor="@color/red_400"
-            app:cardCornerRadius="4dp"
-            app:cardElevation="0dp"
-            app:cardUseCompatPadding="false">
-            <LinearLayout
-              android:id="@+id/lrTech"
-              android:layout_width="match_parent"
+                android:padding="@dimen/spacing_large"
+                android:background="?selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical">
+                <RelativeLayout
+                  android:layout_width="@dimen/article_icon_size"
+                  android:layout_height="@dimen/article_icon_size">
+                  <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:tint="@android:color/white"
+                    app:srcCompat="@drawable/shape_circle" />
+                  <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_centerInParent="true"
+                    android:tint="@color/yellow_400"
+                    app:srcCompat="@drawable/ic_layers" />
+                </RelativeLayout>
+                <androidx.appcompat.widget.AppCompatTextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/spacing_middle"
+                  android:text="@string/science_text"
+                  android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                  android:textColor="@android:color/white"
+                  app:fontFamily="sans-serif-medium" />
+                <androidx.appcompat.widget.AppCompatTextView
+                  android:id="@+id/countScienceArticles"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/spacing_medium"
+                  android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+                  android:textColor="@color/grey" />
+              </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <View
+              android:layout_width="@dimen/spacing_middle"
+              android:layout_height="0dp" />
+            <androidx.cardview.widget.CardView
+              android:layout_width="@dimen/article_card_width"
               android:layout_height="wrap_content"
-              android:padding="@dimen/spacing_large"
-              android:background="?selectableItemBackgroundBorderless"
-              android:clickable="true"
-              android:focusable="true"
-              android:orientation="vertical">
-              <RelativeLayout
-                android:layout_width="@dimen/article_icon_size"
-                android:layout_height="@dimen/article_icon_size">
-                <androidx.appcompat.widget.AppCompatImageView
-                  android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:layout_centerInParent="true"
-                  android:tint="@android:color/white"
-                  app:srcCompat="@drawable/shape_circle" />
-                <androidx.appcompat.widget.AppCompatImageView
-                  android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:layout_margin="5dp"
-                  android:layout_centerInParent="true"
-                  android:tint="@color/red_400"
-                  app:srcCompat="@drawable/ic_memory" />
-              </RelativeLayout>
-              <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
+              app:cardBackgroundColor="@color/red_400"
+              app:cardCornerRadius="4dp"
+              app:cardElevation="0dp"
+              app:cardUseCompatPadding="false">
+              <LinearLayout
+                android:id="@+id/lrTech"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_middle"
-                android:text="@string/tech_text"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
-                android:textColor="@android:color/white"
-                app:fontFamily="sans-serif-medium" />
-              <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/countTechArticles"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_medium"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
-                android:textColor="@color/grey" />
-            </LinearLayout>
-          </androidx.cardview.widget.CardView>
-          <View
-            android:layout_width="@dimen/spacing_smlarge"
-            android:layout_height="0dp" />
-        </LinearLayout>
-      </HorizontalScrollView>
+                android:padding="@dimen/spacing_large"
+                android:background="?selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical">
+                <RelativeLayout
+                  android:layout_width="@dimen/article_icon_size"
+                  android:layout_height="@dimen/article_icon_size">
+                  <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:tint="@android:color/white"
+                    app:srcCompat="@drawable/shape_circle" />
+                  <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_centerInParent="true"
+                    android:tint="@color/red_400"
+                    app:srcCompat="@drawable/ic_memory" />
+                </RelativeLayout>
+                <androidx.appcompat.widget.AppCompatTextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/spacing_middle"
+                  android:text="@string/tech_text"
+                  android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+                  android:textColor="@android:color/white"
+                  app:fontFamily="sans-serif-medium" />
+                <androidx.appcompat.widget.AppCompatTextView
+                  android:id="@+id/countTechArticles"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/spacing_medium"
+                  android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+                  android:textColor="@color/grey" />
+              </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <View
+              android:layout_width="@dimen/spacing_smlarge"
+              android:layout_height="0dp" />
+          </LinearLayout>
+        </HorizontalScrollView>
 
-      <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <FrameLayout
-          android:id="@+id/progress"
-          android:visibility="visible"
+        <RelativeLayout
           android:layout_width="match_parent"
           android:layout_height="match_parent">
-          <androidx.core.widget.ContentLoadingProgressBar
-            style="@style/Widget.AppCompat.ProgressBar"
-            android:layout_width="@dimen/progress_bar_size"
-            android:layout_height="@dimen/progress_bar_size"
-            android:layout_gravity="center"
-            android:indeterminate="true" />
-        </FrameLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-          android:id="@+id/recyclerView"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:layout_marginTop="@dimen/spacing_middle"
-          android:layout_marginBottom="@dimen/spacing_medium"
-          android:layout_marginLeft="@dimen/spacing_medium"
-          android:layout_marginRight="@dimen/spacing_medium"
-          android:fillViewport="true"
-          android:scrollbars="vertical"
-          android:visibility="visible" />
-      </RelativeLayout>
+          <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/article_item"
+            android:layout_marginTop="@dimen/spacing_middle"
+            android:layout_marginBottom="@dimen/spacing_medium"
+            android:layout_marginLeft="@dimen/spacing_medium"
+            android:layout_marginRight="@dimen/spacing_medium"
+            android:scrollbars="vertical" />
 
+        </RelativeLayout>
+
+
+      </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+      android:id="@+id/progress"
+      android:layout_width="match_parent"
+      android:clickable="true"
+      android:focusable="true"
+      android:layout_height="match_parent"
+      android:background="@color/progress_color_bg"
+      android:gravity="center"
+      android:visibility="gone">
+
+      <ProgressBar
+        android:layout_width="@dimen/progress_bar_size"
+        android:layout_height="@dimen/progress_bar_size"/>
 
     </LinearLayout>
-  </androidx.core.widget.NestedScrollView>
+  </RelativeLayout>
 
 </LinearLayout>
