@@ -89,4 +89,12 @@ class NewsFragment : BaseFragment(), NewsView {
     override fun onFailure(throwable: Throwable) {
         showThrowableMessage(throwable)
     }
+
+    companion object {
+        fun newInstance(): NewsFragment {
+            return NewsFragment().apply {
+                arguments = Bundle()
+            }
+        }
+    }
 }

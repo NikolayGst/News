@@ -16,5 +16,4 @@ abstract class MainFragmentsBindingModule {
     @PerFragment
     @ContributesAndroidInjector
     abstract fun bindNewsFragment(): NewsFragment
-
 }

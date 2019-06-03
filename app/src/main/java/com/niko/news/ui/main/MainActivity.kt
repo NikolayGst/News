@@ -21,7 +21,6 @@ class MainActivity : BaseActivity(){
     @Inject
     lateinit var router: Router
 
-
     override fun renderView(savedInstanceState: Bundle?) {
         if (savedInstanceState == null) {
             router.newRootChain(Screens.SplashScreen())
@@ -37,5 +36,4 @@ class MainActivity : BaseActivity(){
         super.onPause()
         navigatorHolder.removeNavigator()
     }
-
 }

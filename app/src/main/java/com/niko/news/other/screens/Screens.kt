@@ -15,7 +15,7 @@ class Screens {
 
     class NewsScreen : SupportAppScreen() {
         override fun getFragment(): Fragment {
-            return NewsFragment()
+            return NewsFragment.newInstance()
         }
     }
 

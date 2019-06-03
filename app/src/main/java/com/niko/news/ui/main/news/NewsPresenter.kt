@@ -42,5 +42,4 @@ constructor(
                         onError = { viewState.onFailure(it) }
                 ).tracked()
     }
-
 }
