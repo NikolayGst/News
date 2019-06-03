@@ -1,8 +1,7 @@
 <resources>
   <string name="app_name">News</string>
-
-  <!-- TODO: I promise to add an attribution link on my website or app to NewsAPI.org. -->
-  <string name="hello_blank_fragment">Hello blank fragment</string>
+  <string name="splash_title">NEWS</string>
+  <string name="resource_news_link">NewsAPI.org</string>
   <string name="base_url">https://newsapi.org/v2/</string>
   <string name="news_api_key">470f57d4c5b84a4187425b2ab761c7b1</string>
   <string name="ok">Ок</string>
@@ -15,5 +14,4 @@
     <item>статьи</item>
     <item>статей</item>
   </string-array>
-
 </resources>

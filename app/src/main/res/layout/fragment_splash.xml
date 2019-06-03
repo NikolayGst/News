@@ -21,7 +21,7 @@
     android:layout_below="@id/logo"
     android:fontFamily="@font/ubuntu_medium"
     android:gravity="center"
-    android:text="NEWS"
+    android:text="@string/splash_title"
     android:textColor="@android:color/black"
     android:textSize="@dimen/splash_title_text_size" />
 
@@ -31,6 +31,16 @@
     android:indeterminate="true"
     android:theme="@style/ProgressStyle"
     android:layout_below="@id/title"
+    android:layout_height="wrap_content" />
+
+  <androidx.appcompat.widget.AppCompatTextView
+    android:layout_width="match_parent"
+    android:text="@string/resource_news_link"
+    android:gravity="center"
+    android:padding="@dimen/spacing_middle"
+    android:textSize="@dimen/splash_text_link_size"
+    android:textColor="@android:color/black"
+    android:layout_alignParentBottom="true"
     android:layout_height="wrap_content" />
 
 
