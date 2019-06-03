@@ -4,11 +4,13 @@ import com.arellomobile.mvp.InjectViewState
 import com.niko.news.domain.useCases.SelectArticlesByCategoryUseCase
 import com.niko.news.domain.useCases.SelectCountsByCategoryUseCase
 import com.niko.news.other.BUSINESS
+import com.niko.news.other.annotations.PerFragment
 import com.niko.news.other.async
 import com.niko.news.other.base.BasePresenter
 import io.reactivex.rxkotlin.subscribeBy
 import javax.inject.Inject
 
+@PerFragment
 @InjectViewState
 class NewsPresenter
 @Inject
